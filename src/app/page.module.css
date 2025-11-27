@@ -1,13 +1,14 @@
-.page {
-  --background: #203E1E;
-  --foreground: #fff;
+  .page {
+    --background: #f8f1e3;
+    --foreground: #f8f1e3;
 
-  --text-primary: #203E1E;
-  --text-secondary: #666;
+    --text-primary: #203E1E;
+    --text-secondary: #585123;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+    --button-primary-hover: #294F26;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-hover-text: #FFFFF8;
+    --button-secondary-border: solid 1px #1a1a1a;
 
   display: flex;
   min-height: 100vh;
@@ -38,18 +39,15 @@
 }
 
 .intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
 .intro p {
-  max-width: 440px;
   font-size: 18px;
+  text-align: center;
   line-height: 32px;
   text-wrap: balance;
   color: var(--text-secondary);
@@ -87,26 +85,32 @@ a.primary {
   background: var(--text-primary);
   color: var(--background);
   gap: 8px;
+  font-weight: 700; 
+  padding: .75rem;
+  border-radius: 8px;
+  width: 100%;
 }
 
 a.secondary {
-  border-color: var(--button-secondary-border);
+  border: solid 1px #999;
+  padding: .75rem;
+  border-radius: 8px;
+  font-weight: 700; 
+  width: 100%;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+a.primary:hover {
+  background: var(--button-primary-hover);
+  border-color: transparent;
 }
 
-@media (max-width: 600px) {
+a.secondary:hover {
+  background: var(--button-secondary-hover);
+  border-color: transparent;
+  color: var(--button-secondary-hover-text);
+}
+
+@media (min-width: 600px) {
   .main {
     padding: 48px 24px;
   }
@@ -127,15 +131,5 @@ a.secondary {
     filter: invert();
   }
 
-  .page {
-    --background: #f8f1e3;
-    --foreground: #f8f1e3;
 
-    --text-primary: #203E1E;
-    --text-secondary: #203E1E;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
 }
