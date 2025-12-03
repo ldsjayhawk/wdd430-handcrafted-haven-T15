@@ -3,14 +3,8 @@
   --foreground: #171717;
   --white-color: #ffffff;
   --text-primary: #203E1E;
+  --text-secondary: #585123;
   --original-background: #e4d7be;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html,
@@ -59,14 +53,15 @@ a {
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--text-primary);
+  font-family: var(--font-lovers);
 }
 
 .nav-section {
   font-size: 18px;
-  color: var(--text-primary);
+  color: var(--text-primary); 
   font-weight: 500;
   margin-left: 8rem;
   display: flex;
@@ -177,8 +172,3 @@ a {
 
 /* Footer Style End */
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}

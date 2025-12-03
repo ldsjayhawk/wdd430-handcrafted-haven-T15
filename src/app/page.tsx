@@ -27,13 +27,13 @@ export default function Page() {
           <h2>Featured Handcrafted Items</h2>
           <p>Explore our curated selection of exceptional handmade products from talented artisans.</p>
           <div className={styles.buttons}>
-            <Link href="/shop" className={styles.secondary}>
+            <Link href="/shop" className={styles.products}>
               View All Products
             </Link>
           </div>
         </div>
-        <h2>Why Handcrafted Haven?</h2>
         <div className={styles.why}> 
+        <h2 className={styles.whyHeader}>Why Handcrafted Haven?</h2>
 
           <div className={styles.creations}> 
             <div className={styles.whyImage}>
