@@ -18,9 +18,11 @@
         "name": "next"
       }
     ],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"],
+      "@auth": ["auth.ts"],
+      "@auth-config": ["auth-config.ts"]
     }
   },
   "include": [
