@@ -209,6 +209,7 @@ a.secondary {
     background: var(--button-primary-hover);
     border-color: transparent;
   }
+
 a.products {
   color: var(--text-secondary);
   font-size: 14px;
@@ -290,4 +291,4 @@ a.products {
     flex-grow: 1;
   }
 }
-
+}
