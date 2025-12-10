@@ -1,0 +1,322 @@
+.container {
+    padding: 7rem 3rem 2.5rem 3rem;
+    background: #f5f3f0;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin: 0;
+    color: #111827;
+}
+
+.sub {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.controlsRow {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.sidebar {
+    width: 260px;
+}
+
+.filterBox {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin-bottom: 1.25rem;
+}
+
+.filterBox h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
+    color: #374151;
+    cursor: pointer;
+}
+
+.checkboxLabel input {
+    cursor: pointer;
+}
+
+.priceRangeRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rangeWrap {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.rangeWrap input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 12px;
+    pointer-events: none;
+    height: 100%;
+}
+
+.rangeWrap input[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: var(--text-primary);
+    border-radius: 999px;
+}
+
+.rangeWrap input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--original-background);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -6.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rangeWrap input[type="range"]::-moz-range-track {
+    background: var(--text-primary);
+    height: 5px;
+    border-radius: 999px;
+}
+
+.rangeWrap input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--original-background);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rangeValues {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 600;
+    padding: 0 0.25rem;
+}
+
+.clearBtn {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.clearBtn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.mainCol {
+    flex: 1;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.search {
+    flex: 1;
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    color: #374151;
+    background: var(--original-background);
+}
+
+.search::placeholder {
+    color: #9ca3af;
+}
+
+.sort {
+    padding: 0.55rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    color: #374151;
+    background: #fff;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.imageWrap {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.cardImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBody {
+    padding: 1rem;
+}
+
+.cardTitle {
+    font-size: 0.975rem;
+    font-weight: 600;
+    margin: 0 0 0.65rem 0;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.metaRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.65rem;
+}
+
+.category {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.price {
+    font-weight: 700;
+    color: #111827;
+    font-size: 0.95rem;
+}
+
+.desc {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.paginationRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pageBtn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.pageBtn:disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.pageNumbers {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .controlsRow {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

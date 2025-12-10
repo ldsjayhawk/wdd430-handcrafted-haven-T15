@@ -1,0 +1,252 @@
+.container {
+    padding: 7rem 3rem 2.5rem 3rem;
+    background: #f5f3f0;
+    min-height: 100vh;
+}
+
+.backRow {
+    margin-bottom: 1.5rem;
+}
+
+.backRow a {
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.backRow a:hover {
+    color: #111827;
+}
+
+.detailGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.preview {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.previewImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.info {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.category {
+    display: inline-block;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.85rem 0 1rem 0;
+    color: #111827;
+}
+
+.ratingRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.75rem 0 0.5rem 0;
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.ratingText {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.info hr {
+    margin: 1.25rem 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.75rem 0;
+    color: #111827;
+}
+
+.desc {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.artisanSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.artisanAvatar {
+    width: 48px;
+    height: 48px;
+    background: #174f2d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.artisanLabel {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.artisanName {
+    font-weight: 600;
+    color: #111827;
+    font-size: 0.95rem;
+}
+
+.actions {
+    margin-top: 1.75rem;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.addBtn {
+    background: #174f2d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.addBtn:hover:not(:disabled) {
+    background: #0f3621;
+}
+
+.addBtn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.secondaryActions {
+    display: flex;
+    gap: 1rem;
+}
+
+.secondaryBtn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+    border-color: #9ca3af;
+    background: #f9fafb;
+}
+
+.reviewsSection {
+    margin-top: 3rem;
+}
+
+.reviewsSection h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    color: #111827;
+}
+
+.reviewCard {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+}
+
+.reviewHeader strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+.reviewDate {
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.reviewCard p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .detailGrid {
+        grid-template-columns: 1fr;
+    }
+}
