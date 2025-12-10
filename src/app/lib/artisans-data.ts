@@ -1,0 +1,38 @@
+export const artisans = [
+  {
+    id: '11111111-1111-1111-1111-111111111111',
+    initials: 'ES',
+    name: 'Emma Stone Ceramics',
+    bio: 'Passionate ceramic artist creating unique functional art pieces.',
+    city: 'Portland',
+    state: 'Oregon',
+    since: 2022,
+  },
+  {
+    id: '22222222-2222-2222-2222-222222222222',
+    initials: 'MW',
+    name: 'Michael Wood Crafts',
+    bio: 'Traditional woodworker specializing in kitchen and home goods.',
+    city: 'Asheville',
+    state: 'North Carolina',
+    since: 2021,
+  },
+  {
+    id: '33333333-3333-3333-3333-333333333333',
+    initials: 'SA',
+    name: 'Sophia Art Studio',
+    bio: 'Contemporary artist exploring color, form, and abstract expression.',
+    city: 'Brooklyn',
+    state: 'New York',
+    since: 2023,
+  },
+  {
+    id: '44444444-4444-4444-4444-444444444444',
+    initials: 'JL',
+    name: 'James Lens Photography',
+    bio: 'Nature and landscape photographer capturing fine art prints.',
+    city: 'Denver',
+    state: 'Colorado',
+    since: 2020,
+  },
+];

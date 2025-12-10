@@ -1,21 +1,23 @@
-.page {
-  --background: #203E1E;
-  --foreground: #fff;
+  .page {
+    --background: #f8f1e3;
+    --foreground: #f8f1e3;
 
-  --text-primary: #203E1E;
-  --text-secondary: #666;
+    --text-primary: #203E1E;
+    --text-secondary: #585123;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+    --button-primary-hover: #294F26;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-hover-text: #FFFFF8;
+    --button-secondary-border: solid 1px #1a1a1a;
 
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
+  font-family: var(--inter);
   background-color: var(--background);
 }
+
 
 .main {
   display: flex;
@@ -29,27 +31,32 @@
   padding: 120px 60px;
 }
 
+.intro,
+.why {
+    margin: 4rem 0;
+}
+
 .intro {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  /* align-items: flex-start;
+  text-align: left; */
   gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+
+.main h1, 
+.main h2, 
+.main h3 {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-primary); 
 }
 
-.intro p {
-  max-width: 440px;
+.main p {
   font-size: 18px;
+  text-align: center;
   line-height: 32px;
   text-wrap: balance;
   color: var(--text-secondary);
@@ -60,38 +67,141 @@
   color: var(--text-primary);
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
+a.primary {
+  background: var(--text-primary);
+  color: var(--background);
+  gap: 8px;
+  font-weight: 700; 
+  padding: .75em;
+  border-radius: 8px;
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
 }
 
-.ctas a {
+a.secondary,
+a.products {
+  color: var(--text-secondary);
+  border: solid 1px #999;
+  padding: .75rem;
+  border-radius: 8px;
+  font-weight: 700; 
+  width: 100%;
+}
+
+a.primary:hover {
+  background: var(--button-primary-hover);
+  border-color: transparent;
+}
+
+a.secondary:hover {
+  background: var(--button-secondary-hover);
+  border-color: transparent;
+  color: var(--button-secondary-hover-text);
+}
+
+.buttons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  gap: 12px;
+  text-align: center;
 }
 
 a.primary {
   background: var(--text-primary);
   color: var(--background);
-  gap: 8px;
+  font-weight: 700; 
+  padding: 1.4rem 0 0 0;
+  border-radius: 8px;
+  width: 13rem;
+  height: 4rem;
 }
 
 a.secondary {
-  border-color: var(--button-secondary-border);
+  color: var(--text-secondary);
+  border: solid 1px #999;
+  padding: 1.4rem 0 0 0;
+  border-radius: 8px;
+  font-weight: 700; 
+  width: 13rem;
+  height: 4rem;
 }
+
+/* Artisans Page - Begin */
+
+.art {
+  width: 100%;
+}
+
+.art h1 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.art p {
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.artisansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.initials {
+  width: 55px;
+  height: 55px;
+  background: var(--text-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.card h3 {
+  margin: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Artisans Page - End */
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
@@ -100,16 +210,52 @@ a.secondary {
     border-color: transparent;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+a.products {
+  color: var(--text-secondary);
+  font-size: 14px;
+  border: solid 1px #999;
+  padding: 1.4rem 0 0 0;
+  border-radius: 8px;
+  font-weight: 700; 
+  width: 11rem;
+  height: 4rem;
 }
 
-@media (max-width: 600px) {
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: 24px;
+}
+
+.whyImage {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (min-width: 600px) {
+
   .main {
     padding: 48px 24px;
   }
+  
+  .main h1,
+  .main h2,
+  .main h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro,
+  .feature,
+  .why {
+    margin: 8rem 0;
+    padding: 2rem;
+  }
+  
 
   .intro {
     gap: 16px;
@@ -120,22 +266,29 @@ a.secondary {
     line-height: 40px;
     letter-spacing: -1.92px;
   }
+  
+
+  .buttons {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 55%;
+    gap: 24px;
+  }
+
+  .why {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .why > *:first-child {
+    flex-basis: 100%
+  }
+
+  .why > *:not(:first-child){
+    flex-basis: calc(33.33%);
+    flex-grow: 1;
+  }
 }
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #f8f1e3;
-    --foreground: #f8f1e3;
-
-    --text-primary: #203E1E;
-    --text-secondary: #203E1E;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
 }
