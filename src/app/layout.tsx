@@ -1,8 +1,10 @@
 import "./globals.css";
 import SideNav from '@/app/ui/sidenav';
 import Footer from '@/app/ui/footer';
-import { kameron, lovers, sourceSans, inter, nunito, paris} from '@/app/ui/fonts';
+import { inter, paris} from '@/app/ui/fonts';
 import { Metadata } from 'next';
+import { SessionProvider } from "next-auth/react";
+
  
 export const metadata: Metadata = {
   title: 'Handcrafted Haven',
@@ -18,9 +20,11 @@ export default function RootLayout({
 
     <html lang="en">
       <body className={`${inter.className} ${paris.variable}`}>
-        <SideNav/>
-        {children}
-        <Footer/>
+        <SessionProvider>
+          <SideNav/>
+          {children}
+          <Footer/>
+        </SessionProvider>
       </body>
     </html>
   );

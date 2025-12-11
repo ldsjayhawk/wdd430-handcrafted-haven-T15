@@ -19,18 +19,18 @@ async function getUser(email: string): Promise<User | undefined> {
 }
 
 
-export const { auth, signIn, signOut } = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
     providers: [
     Credentials({
       async authorize(credentials) {
         const parsedCredentials = z
-          .object({ username: z.string(), password: z.string().min(6) })
+          .object({ username: z.string(), password: z.string().min(3) })
           .safeParse(credentials);
  
         if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await getUser(email);
+          const { username, password } = parsedCredentials.data;
+          const user = await getUser(username);
           if (!user) return null;
             const passwordsMatch = await bcrypt.compare(password, user.password);
           if (passwordsMatch) return user;
