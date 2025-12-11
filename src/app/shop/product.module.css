@@ -113,6 +113,7 @@
     font-size: 0.9rem;
     line-height: 1.6;
     margin: 0;
+    margin-bottom: 1rem;
 }
 
 .artisanSection {
@@ -361,6 +362,75 @@
     font-weight: 600;
     width: "20%";
     padding: 1rem;
+}
+
+.authButton {
+  display: inline-block;
+  background: #0070f3;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.authButton:hover {
+  background: #0059c1;
+}
+
+.title2 { 
+    margin-bottom: 30px; 
+    color: #174f2d;
+}
+.editForm2 { 
+    display: grid; 
+    gap: 15px; 
+}
+
+.label2 { 
+    font-weight: bold; 
+}
+
+.textField2 { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    resize: none;
+}
+
+.actions2 { 
+    display: flex; 
+    gap: 15px; 
+    justify-content: flex-end; 
+    margin-top: 20px; 
+}
+
+.submitButton2, .cancelButton2 { 
+    padding: 10px 20px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    text-align: center;
+}
+
+.submitButton2 { 
+    background-color: #174f2d; 
+    color: white; 
+    border: none; 
+}
+
+.submitButton2:hover { 
+    background-color: #24834a; 
+}
+
+.cancelButton2 { 
+    background-color: #f0f0f0; 
+    color: #333; 
+    border: 1px solid #ccc; 
 }
 
 @media (max-width: 900px) {
