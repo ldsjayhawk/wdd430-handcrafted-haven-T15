@@ -1,9 +1,11 @@
 import { getProductById } from "@/app/lib/getProducts";
 import { getArtisanById } from "@/app/lib/getArtisans";
 import { getReviewsByProduct } from "@/app/lib/getReviews";
+import { getUserByEmail } from "@/app/lib/getUser";
 import styles from "../product.module.css";
 import Link from "next/link";
 import ProductActions from "../ProductActions";
+import { auth } from "@/auth";
 
 export default async function ProductPage({
   params,
@@ -15,6 +17,16 @@ export default async function ProductPage({
 
   const product = await getProductById(numericId);
   const reviews = await getReviewsByProduct(numericId);
+  
+const session = await auth();
+const currentUserEmail = session?.user?.email;
+
+let currentUserId: string | number | undefined; 
+
+if (currentUserEmail) {
+    const user = await getUserByEmail(currentUserEmail);
+    currentUserId = user?.id; 
+}
 
   if (!product) {
     return (
@@ -85,6 +97,12 @@ export default async function ProductPage({
 
           <h3>Description</h3>
           <p className={styles.desc}>{product.description}</p>
+
+          {session?.user && String(currentUserId) === String(product.user_id) && (
+          <Link href={`/shop/edit/${product.id}`} className={styles.authButton}>
+            Edit Description
+          </Link>
+          )}
 
           <hr />
 

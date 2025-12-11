@@ -40,3 +40,14 @@ export async function getProductByArtisan(id: number) {
   `;
   return result;
 }
+
+export async function updateProductDescriptionInDB(
+  id: number,
+  newDescription: string
+): Promise<void> {
+  await sql`
+    UPDATE products
+    SET description = ${newDescription}
+    WHERE id = ${id};
+  `;
+}

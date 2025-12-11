@@ -1,8 +1,12 @@
 'use server';
- 
-import { signIn } from '@auth';
+
+import postgres from 'postgres';
+import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
-  
+import { redirect } from "next/navigation";
+import { updateProductDescriptionInDB } from "./getProducts";
+
+
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
@@ -20,4 +24,31 @@ export async function authenticate(
     }
     throw error;
   }
+}
+
+export async function updateProductDescription(
+  productId: number,
+  formData: FormData
+) {
+  const rawDescription = formData.get("description");
+
+  if (typeof rawDescription !== "string" || !rawDescription.trim()) {
+    console.error("Validation Error: Invalid or empty description provided.");
+
+    throw new Error("Invalid or empty description provided.");
+  }
+  
+  const newDescription = rawDescription.trim();
+
+  try {
+
+    await updateProductDescriptionInDB(productId, newDescription);
+
+  } catch (error) {
+    console.error(`Failed to update product ID ${productId}:`, error);
+
+    throw new Error("Failed to save product description due to a server error.");
+  }
+
+  redirect(`/shop/${productId}`);
 }
