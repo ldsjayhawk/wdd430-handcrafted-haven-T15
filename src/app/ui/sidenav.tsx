@@ -20,11 +20,6 @@ export default function SideNav() {
         </nav>
       </div>
 
-      <div className="search-bar">
-        <span className="icon-placeholder">🔍</span>
-        <input type="text" placeholder="Search products..." />
-      </div>
-
       <div className="right-section">
         <span className="icon-placeholder">🛒</span>
         <form action={login}>

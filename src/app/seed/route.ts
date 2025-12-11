@@ -1,5 +1,7 @@
+// src/app/seed/route.ts
 import postgres from 'postgres';
 import { artisans } from '../lib/artisans-data';
+import products from '../../data/products.json';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -18,27 +20,59 @@ async function seedArtisans() {
     );
   `;
 
-  const insertedArtisans = await Promise.all(
-    artisans.map(
-      (a) => sql`
-        INSERT INTO artisans (id, initials, name, bio, city, state, since)
-        VALUES (${a.id}, ${a.initials}, ${a.name}, ${a.bio}, ${a.city}, ${a.state}, ${a.since})
-        ON CONFLICT (id) DO NOTHING;
-      `
-    )
+  await Promise.all(
+    artisans.map(a => sql`
+      INSERT INTO artisans (id, initials, name, bio, city, state, since)
+      VALUES (${a.id}, ${a.initials}, ${a.name}, ${a.bio}, ${a.city}, ${a.state}, ${a.since})
+      ON CONFLICT (id) DO NOTHING;
+    `)
   );
+}
 
-  return insertedArtisans;
+async function seedProducts() {
+  await sql`
+    CREATE TABLE IF NOT EXISTS products (
+      id TEXT PRIMARY KEY,
+      title VARCHAR(255) NOT NULL,
+      category VARCHAR(255) NOT NULL,
+      price NUMERIC NOT NULL,
+      image VARCHAR(500),
+      rating NUMERIC,
+      reviews INT,
+      description TEXT,
+      artisan VARCHAR(255)
+    );
+  `;
+
+  await Promise.all(
+    products.map((p: any) => sql`
+      INSERT INTO products (id, title, category, price, image, rating, reviews, description, artisan)
+      VALUES (
+        ${p.id},
+        ${p.title},
+        ${p.category},
+        ${p.price},
+        ${p.image},
+        ${p.rating ?? null},
+        ${p.reviews ?? null},
+        ${p.description ?? null},
+        ${p.artisan ?? null}
+      )
+      ON CONFLICT (id) DO NOTHING;
+    `)
+  );
 }
 
 export async function GET() {
   try {
-    await sql.begin(() => [
-      seedArtisans(),
-    ]);
+    await sql.begin(async () => {
+      await seedArtisans();
+      await seedProducts();
+    });
 
-    return Response.json({ message: 'Artisans seeded successfully!' });
+    return Response.json({ message: 'Seed completed successfully!' });
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error('Seed error', error);
+    return Response.json({ error: (error as any).message }, { status: 500 });
   }
 }
