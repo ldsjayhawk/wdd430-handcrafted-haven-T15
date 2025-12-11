@@ -1,6 +1,5 @@
 'use client';
  
-import { inter } from '@/app/ui/fonts';
 import {
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
@@ -10,10 +9,9 @@ import { authenticate } from '@/app/lib/actions';
 import { useSearchParams } from 'next/navigation';
 import styles from "./page.module.css";
 
- 
 export default function LoginForm() {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/'; //add dashboard
+  const callbackUrl = searchParams.get('callbackUrl') || '/'; 
   const [errorMessage, formAction, isPending] = useActionState(
     authenticate,
     undefined,

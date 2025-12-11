@@ -4,7 +4,7 @@ import Footer from '@/app/ui/footer';
 import { inter, paris} from '@/app/ui/fonts';
 import { Metadata } from 'next';
 import { SessionProvider } from "next-auth/react";
-
+import { signIn } from 'next-auth/react';
  
 export const metadata: Metadata = {
   title: 'Handcrafted Haven',

@@ -1,11 +1,9 @@
 'use server';
 
-import postgres from 'postgres';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 import { redirect } from "next/navigation";
 import { updateProductDescriptionInDB } from "./getProducts";
-
 
 export async function authenticate(
   prevState: string | undefined,
