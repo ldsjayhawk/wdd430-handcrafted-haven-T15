@@ -1,6 +1,6 @@
 .container {
     padding: 7rem 3rem 2.5rem 3rem;
-    background: #f5f3f0;
+    background: #f8f1e3;
     color: #1f2937;
     min-height: 100vh;
 }
@@ -166,11 +166,11 @@
     margin-right: 1rem;
     font-size: 0.9rem;
     color: #374151;
-    background: var(--original-background);
+    background: #e4e2e2;
 }
 
 .search::placeholder {
-    color: #9ca3af;
+    color: #686a6d;
 }
 
 .sort {

@@ -26,7 +26,6 @@
   max-width: 800px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
   background-color: var(--foreground);
   padding: 120px 60px;
 }
@@ -129,6 +128,7 @@ a.secondary {
 /* Artisans Page - Begin */
 
 .art {
+  margin-top: 4rem;
   width: 100%;
 }
 
@@ -202,6 +202,92 @@ a.secondary {
 }
 
 /* Artisans Page - End */
+
+/* Home Page Products - Begin  */
+
+.featureGrid {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.featureCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.featureCard:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.featureImageWrap {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background: #f3f4f6;
+}
+
+.featureImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featureBody {
+  padding: 1rem;
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem 0;
+  color: #111827;
+}
+
+.featurePrice {
+  font-weight: 700;
+  color: #111827;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.featureCategory {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Home Page Products - End  */
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
