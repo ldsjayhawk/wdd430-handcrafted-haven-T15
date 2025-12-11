@@ -104,6 +104,16 @@ a {
   cursor: pointer;
 }
 
+.primary-button {
+  background: var(--text-primary);
+  color: var(--background);
+  gap: 8px;
+  font-weight: 700; 
+  padding: .75em;
+  border-radius: 8px;
+  width: 100%;
+}
+
 /* SideNav Style End */
 
 /* Footer Style Begin */

@@ -1,9 +1,11 @@
 import styles from "./page.module.css";
 import Link from 'next/link';
-import font from 'next/font/google'
 import Image from 'next/image'
+import { getRandomProducts } from "src/app/lib/getProducts";
 
-export default function Page() {
+export default async function Page() {
+  const featured = await getRandomProducts();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -26,12 +28,40 @@ export default function Page() {
         <div className={styles.featured}>
           <h2>Featured Handcrafted Items</h2>
           <p>Explore our curated selection of exceptional handmade products from talented artisans.</p>
+          
+          <div className={styles.featureGrid}>
+            {featured.map(product => (
+              <Link
+                key={product.id}
+                href={`/shop/${product.id}`}
+                className={styles.featureCard}
+              >
+                <div className={styles.featureImageWrap}>
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className={styles.featureImage}
+                  />
+                </div>
+
+                <div className={styles.featureBody}>
+                  <span className={styles.featureCategory}>{product.category}</span>
+                  <h3 className={styles.featureTitle}>{product.title}</h3>
+                  <p className={styles.featurePrice}>${product.price}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+        </div>
+
           <div className={styles.buttons}>
             <Link href="/shop" className={styles.products}>
               View All Products
             </Link>
           </div>
-        </div>
+          
         <div className={styles.why}> 
         <h2 className={styles.whyHeader}>Why Handcrafted Haven?</h2>
 

@@ -1,0 +1,158 @@
+  .page {
+    --background: #f8f1e3;
+    --foreground: #f8f1e3;
+
+    --text-primary: #203E1E;
+    --text-secondary: #585123;
+
+    --button-primary-hover: #294F26;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-hover-text: #FFFFF8;
+    --button-secondary-border: solid 1px #1a1a1a;
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--inter);
+  background-color: var(--background);
+}
+
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--foreground);
+  padding: 120px 60px;
+}
+
+.form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main {
+    margin: 6rem 0;
+    align-items: center;
+}
+
+
+.main h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--text-primary); 
+  margin-bottom: 2rem;
+}
+
+.main p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 32px;
+  text-wrap: balance;
+  color: var(--text-secondary);
+}
+
+.input {
+    height: 48px;
+    padding: .5em;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+
+}
+
+button.login {
+    background-color: var(--button-primary-hover);
+    color: var(--background);
+    font-size: 1.3em;
+    height: 48px;
+    padding: .75rem;
+    background: var(--text-primary);
+    gap: 8px;
+    font-weight: 700; 
+    padding: .5em;
+    border-radius: 8px;
+    width: 100%;
+    margin: 2rem;
+}
+
+  .icons {
+    height: 25px;
+    width: 25px;
+  }
+
+/* button */
+/* a.primary {
+  background: var(--text-primary);
+  color: var(--background);
+  gap: 8px;
+  font-weight: 700; 
+  padding: .75em;
+  border-radius: 8px;
+  width: 100%;
+} */
+
+
+/* .button:hover {
+  background: var(--button-primary-hover);
+  border-color: transparent;
+} */
+
+
+
+.footerInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+@media (min-width: 600px) {
+
+  .main {
+    padding: 48px 24px;
+  }
+  
+  .main h1,
+  .main h2,
+  .main h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .buttons {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 55%;
+    gap: 24px;
+  }
+
+
+}
