@@ -134,10 +134,8 @@ useEffect(() => {
       </div>
 
       <div className={styles.controlsRow}>
-        {/* 🔹 Sidebar */}
         <div className={styles.sidebar}>
 
-          {/* Categories */}
           <div className={styles.filterBox}>
             <h4>Categories</h4>
             {categories.map((c) => (
@@ -152,7 +150,6 @@ useEffect(() => {
             ))}
           </div>
 
-          {/* Price Range */}
           <div className={styles.filterBox}>
             <h4>Price Range</h4>
             <div className={styles.priceRangeRow}>
@@ -193,9 +190,7 @@ useEffect(() => {
           </button>
         </div>
 
-        {/* 🔹 Main Content */}
         <div className={styles.mainCol}>
-          {/* Search & Sort */}
           <div className={styles.toolbar}>
             <input
               className={styles.search}
@@ -222,7 +217,6 @@ useEffect(() => {
             </select>
           </div>
 
-          {/* Product Grid */}
           <div className={styles.grid}>
             {paged.map((p) => (
               <article key={p.id} className={styles.card}>
@@ -254,7 +248,6 @@ useEffect(() => {
             ))}
           </div>
 
-          {/* Pagination */}
           <div className={styles.paginationRow}>
             <button
               onClick={() => setPage((s) => Math.max(1, s - 1))}

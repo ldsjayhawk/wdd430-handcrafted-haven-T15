@@ -14,29 +14,29 @@ export default function Footer() {
         <div className="footer-section">
           <h3 className="footer-title">Shop</h3>
           <ul className="footer-links">
-            <li><a href="#">Art</a></li>
-            <li><a href="#">Woodwork</a></li>
-            <li><a href="#">Pottery</a></li>
-            <li><a href="#">Photography</a></li>
+            <li>Art</li>
+            <li>Woodwork</li>
+            <li>Pottery</li>
+            <li>Photography</li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h3 className="footer-title">Support</h3>
           <ul className="footer-links">
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
+            <li>Contact Us</li>
+            <li>FAQs</li>
+            <li>Shipping Info</li>
+            <li>Returns</li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h3 className="footer-title">Legal</h3>
           <ul className="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Accessibility</a></li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+            <li>Accessibility</li>
           </ul>
         </div>
 

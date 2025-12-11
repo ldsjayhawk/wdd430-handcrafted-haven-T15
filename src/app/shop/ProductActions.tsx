@@ -47,36 +47,6 @@ export default function ProductActions({ product }: { product: any }) {
             >
                 🛒 {added ? "Added to Cart" : "Add to Cart"}
             </button>
-            <div style={{ display: "flex", gap: "1rem" }}>
-                <button
-                    style={{
-                        flex: 1,
-                        background: "transparent",
-                        border: "1px solid #d1d5db",
-                        padding: "0.75rem 1rem",
-                        borderRadius: 8,
-                        cursor: "pointer",
-                        color: "#374151",
-                        fontWeight: 500,
-                    }}
-                >
-                    ♡ Save
-                </button>
-                <button
-                    style={{
-                        flex: 1,
-                        background: "transparent",
-                        border: "1px solid #d1d5db",
-                        padding: "0.75rem 1rem",
-                        borderRadius: 8,
-                        cursor: "pointer",
-                        color: "#374151",
-                        fontWeight: 500,
-                    }}
-                >
-                    ⤴ Share
-                </button>
-            </div>
         </div>
     );
 }

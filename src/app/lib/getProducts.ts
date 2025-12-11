@@ -14,7 +14,7 @@ export async function getAllProducts() {
 
 export async function getProductById(id: number) {
   const result = await sql`
-    SELECT id, title, category, price, image, description
+    SELECT id, title, category, price, image, description, user_id
     FROM products
     WHERE id = ${id}
     LIMIT 1
@@ -28,6 +28,15 @@ export async function getRandomProducts() {
     FROM products
     ORDER BY RANDOM()
     LIMIT 3
+  `;
+  return result;
+}
+
+export async function getProductByArtisan(id: number) {
+  const result = await sql`
+    SELECT id, title, category, price, image, description, user_id
+    FROM products
+    WHERE user_id = ${id};
   `;
   return result;
 }

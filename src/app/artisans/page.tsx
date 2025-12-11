@@ -1,5 +1,6 @@
 import styles from "../page.module.css";
 import { getArtisans } from "@/app/lib/getArtisans";
+import Link from "next/link";
 
 export default async function Page() {
   const artisans = await getArtisans();
@@ -14,18 +15,20 @@ export default async function Page() {
 
         <div className={styles.artisansGrid}>
           {artisans.map((artisan: any) => (
-            <div key={artisan.id} className={styles.card}>
-              <div className={styles.initials}>{artisan.initials}</div>
+            <Link key={artisan.id} href={`/artisans/${artisan.id}`}>
+              <div className={styles.card}>
+                <div className={styles.initials}>{artisan.initials}</div>
 
-              <h3>{artisan.name}</h3>
+                <h3>{artisan.name}</h3>
 
-              <p>{artisan.bio}</p>
+                <p>{artisan.bio}</p>
 
-              <div className={styles.footerInfo}>
-                <span>📍 {artisan.city}, {artisan.state}</span>
-                <span>📅 Since {artisan.since}</span>
+                <div className={styles.footerInfo}>
+                  <span>📍 {artisan.city}, {artisan.state}</span>
+                  <span>📅 Since {artisan.since}</span>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </main>
